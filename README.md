@@ -1,0 +1,2 @@
+dokuwiki-meta-plugin
+====================
