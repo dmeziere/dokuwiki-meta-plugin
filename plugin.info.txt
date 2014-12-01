@@ -1,0 +1,7 @@
+base   meta
+author David Mézière
+email  dmeziere@free.fr
+date   2014-12-01
+name   Meta tag handling
+desc   Allows to handle global and local meta tags.
+url    https://github.com/dmeziere
