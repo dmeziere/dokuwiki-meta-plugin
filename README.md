@@ -1,2 +1,4 @@
-dokuwiki-meta-plugin
+Dokuwiki meta plugin
 ====================
+
+Don't use. Pending work.
