@@ -114,8 +114,8 @@ class syntax_plugin_meta extends DokuWiki_Syntax_Plugin
     {
         $data = array();
 
-        // Get the numeric part of the tag.
-        preg_match("/^\{META (?P<meta>(?:'.join('|', $this->names).'))\}(?P<value>[^}]+)\{\/META\}$/", $match, $data);
+        // Get the value of the tag.
+        preg_match("/^\{META (?P<meta>(?:".join('|', $this->names)."))\}(?P<value>[^}]+)\{\/META\}$/", $match, $data);
         
         return array(
             $data['meta'] => trim($data['value'])
