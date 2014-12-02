@@ -38,20 +38,22 @@ class action_plugin_meta extends DokuWiki_Action_Plugin
         $data = p_get_metadata($ID);
         
         // For each user-defined meta tags
-        foreach($data['plugin_meta'] as $name => $content) {
-            $found = false;
-            
-            // Search it in engine meta tags
-            foreach($event->data['meta'] as $index => $meta) {
-                if ($meta['name'] === $name) {
-                    $event->data['meta'][$index]['content'] = $content;
-                    $found = true;
+        if (isset($data['plugin_meta'])) {
+            foreach($data['plugin_meta'] as $name => $content) {
+                $found = false;
+                
+                // Search it in engine meta tags
+                foreach($event->data['meta'] as $index => $meta) {
+                    if ($meta['name'] === $name) {
+                        $event->data['meta'][$index]['content'] = $content;
+                        $found = true;
+                    }
                 }
-            }
 
-            // When not found, create it
-            if (!$found) {
-                $event->data['meta'][] = array('name' => $name, 'content' => $content);
+                // When not found, create it
+                if (!$found) {
+                    $event->data['meta'][] = array('name' => $name, 'content' => $content);
+                }
             }
         }
     }
